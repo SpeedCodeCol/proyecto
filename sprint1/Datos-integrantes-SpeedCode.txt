@@ -1,2 +1,3 @@
 Nombres		Cedula		Celular
 Santiago Canal	1018469823	3012415382 
+nestor bernal   11203935    3153619594
