@@ -1,28 +1,30 @@
 package clases;
 import java.util.*;
 public class Transaccion {
-    private String id;
+    private String idTransaccion;
     private String concepto;
     private float amount;
     private Usuario usuario;
     private Date creacion;
     private Date ultimaEdicion;
+    private boolean estadoTransaccion;
 
-    public Transaccion(String id, String concepto, float amount,Usuario usuario, Date creacion) {
-        this.id = id;
+    public Transaccion(String idTransaccion, String concepto, float amount,Usuario usuario, Date creacion) {
+        this.idTransaccion = idTransaccion;
         this.concepto = concepto;
         this.amount = amount;
         this.usuario=usuario;
         this.creacion = creacion;
         this.ultimaEdicion = creacion;
+        this.estadoTransaccion=true;
     }
 
-    public String getId() {
-        return id;
+    public String getIdTransaccion() {
+        return idTransaccion;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdTransaccion(String idTransaccion) {
+        this.idTransaccion = idTransaccion;
     }
 
     public String getConcepto() {
@@ -63,5 +65,26 @@ public class Transaccion {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public boolean isEstadoTransaccion() {
+        return estadoTransaccion;
+    }
+
+    public void setEstadoTransaccion(boolean estadoTransaccion) {
+        this.estadoTransaccion = estadoTransaccion;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaccion{" +
+                "idTransaccion='" + idTransaccion + '\'' +
+                ", concepto='" + concepto + '\'' +
+                ", amount=" + amount +
+                ", usuario=" + usuario +
+                ", creacion=" + creacion +
+                ", ultimaEdicion=" + ultimaEdicion +
+                ", estadoTransaccion=" + estadoTransaccion +
+                '}';
     }
 }

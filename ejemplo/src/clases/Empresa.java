@@ -5,36 +5,38 @@ import java.util.Date;
 
 public class Empresa {
     //atributos
-    private String id;
+    private Long idEmpresa;
     private String name;
-    private String rut;
+    private TipoDocumento tipoDocumentoE;
     private String phone;
     private String address;
     private ArrayList <Usuario> empleados;
     private ArrayList<Transaccion> transacciones;
     private Date creacion;
     private Date ultimaEdicion;
+    private boolean estadoEmpresa;
     //constructor
 
 
-    public Empresa(String name, String rut, String phone, String address,ArrayList<Usuario>usuarios,Date creacion) {
-        ArrayList<Transaccion>transaccions=new ArrayList<>();
+    public Empresa(Long idEmpresa, String name, TipoDocumento tipoDocumentoE, String phone, String address, ArrayList<Usuario> empleados, ArrayList<Transaccion> transacciones, Date creacion, Date ultimaEdicion) {
+        this.idEmpresa = idEmpresa;
         this.name = name;
-        this.rut=rut;
-        this.phone=phone;
-        this.address=address;
-        this.empleados=usuarios;
-        this.transacciones=transaccions;
-        this.creacion=creacion;
-        this.ultimaEdicion=creacion;
+        this.tipoDocumentoE = tipoDocumentoE;
+        this.phone = phone;
+        this.address = address;
+        this.empleados = empleados;
+        this.transacciones = transacciones;
+        this.creacion = creacion;
+        this.ultimaEdicion = ultimaEdicion;
+        this.estadoEmpresa=true;
     }
 
-    public String getId() {
-        return id;
+    public Long getIdEmpresa() {
+        return idEmpresa;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setIdEmpresa(Long idEmpresa) {
+        this.idEmpresa = idEmpresa;
     }
 
     public String getName() {
@@ -45,12 +47,12 @@ public class Empresa {
         this.name = name;
     }
 
-    public String getRut() {
-        return rut;
+    public TipoDocumento getTipoDocumentoE() {
+        return tipoDocumentoE;
     }
 
-    public void setRut(String rut) {
-        this.rut = rut;
+    public void setTipoDocumentoE(TipoDocumento tipoDocumentoE) {
+        this.tipoDocumentoE = tipoDocumentoE;
     }
 
     public String getPhone() {
@@ -100,4 +102,29 @@ public class Empresa {
     public void setTransacciones(ArrayList<Transaccion> transacciones) {
         this.transacciones = transacciones;
     }
+
+    public boolean isEstadoEmpresa() {
+        return estadoEmpresa;
+    }
+
+    public void setEstadoEmpresa(boolean estadoEmpresa) {
+        this.estadoEmpresa = estadoEmpresa;
+    }
+
+    @Override
+    public String toString() {
+        return "Empresa{" +
+                "idEmpresa=" + idEmpresa +
+                ", name='" + name + '\'' +
+                ", tipoDocumentoE=" + tipoDocumentoE +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
+                ", empleados=" + empleados +
+                ", transacciones=" + transacciones +
+                ", creacion=" + creacion +
+                ", ultimaEdicion=" + ultimaEdicion +
+                ", estadoEmpresa=" + estadoEmpresa +
+                '}';
+    }
 }
+
