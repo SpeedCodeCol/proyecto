@@ -13,7 +13,8 @@ public class Controlador {
     public Rol[] crearRoles(){
         Rol nuevo=new Rol(1,"administrador");
         Rol nuevo2=new Rol(2,"empleado");
-        Rol [] rol={nuevo,nuevo2};
+        Rol nuevo3=new Rol(3,"empleado");
+        Rol [] rol={nuevo,nuevo2,nuevo3};
         return rol;
     }
 

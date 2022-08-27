@@ -1,9 +1,8 @@
 package clases;
-import javax.management.relation.Role;
 import java.util.Date;
 public class Usuario {
     //atributos
-    private Long idUsuario;
+    private String idUsuario;
     private String correo;
     private String clave;
     private TipoDocumento tipoDocumento;
@@ -12,9 +11,10 @@ public class Usuario {
     private Date fechaCreacion;
     private Date fechaEdicion;
     private boolean estado;
+    private Empresa empresa;
     //constructor
 
-    public Usuario(Long idUsuario, String correo, String clave, TipoDocumento tipoDocumento, Rol role,Date fechaCreacion) {
+    public Usuario(String idUsuario, String correo, String clave, TipoDocumento tipoDocumento, Rol role, Date fechaCreacion) {
         this.idUsuario = idUsuario;
         this.correo = correo;
         this.clave = clave;
@@ -25,11 +25,19 @@ public class Usuario {
         this.estado=true;
     }
 
-    public Long getIdUsuario() {
+    public Empresa getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(Empresa empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
+    public void setIdUsuario(String idUsuario) {
         this.idUsuario = idUsuario;
     }
 
@@ -102,10 +110,10 @@ public class Usuario {
         return "Usuario{" +
                 "idUsuario=" + idUsuario +
                 ", correo='" + correo + '\'' +
-                ", clave='" + clave + '\'' +
+                ", clave='" + clave + '\'' +"\n"+
                 ", tipoDocumento=" + tipoDocumento +
                 ", role=" + role +
-                ", phone='" + phone + '\'' +
+                ", phone='" + phone + '\'' +"\n"+
                 ", fechaCreacion=" + fechaCreacion +
                 ", fechaEdicion=" + fechaEdicion +
                 ", estado=" + estado +

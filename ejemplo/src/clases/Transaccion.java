@@ -7,9 +7,11 @@ public class Transaccion {
     private Usuario usuario;
     private Date creacion;
     private Date ultimaEdicion;
+    private boolean ingreso;
     private boolean estadoTransaccion;
 
-    public Transaccion(String idTransaccion, String concepto, float amount,Usuario usuario, Date creacion) {
+
+    public Transaccion(String idTransaccion, String concepto, float amount,Usuario usuario, Date creacion,boolean ingreso) {
         this.idTransaccion = idTransaccion;
         this.concepto = concepto;
         this.amount = amount;
@@ -17,6 +19,8 @@ public class Transaccion {
         this.creacion = creacion;
         this.ultimaEdicion = creacion;
         this.estadoTransaccion=true;
+        this.ingreso=ingreso;
+
     }
 
     public String getIdTransaccion() {

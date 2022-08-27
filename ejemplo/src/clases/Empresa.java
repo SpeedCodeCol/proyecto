@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Empresa {
     //atributos
-    private Long idEmpresa;
+    private String idEmpresa;
     private String name;
     private TipoDocumento tipoDocumentoE;
     private String phone;
@@ -18,24 +18,31 @@ public class Empresa {
     //constructor
 
 
-    public Empresa(Long idEmpresa, String name, TipoDocumento tipoDocumentoE, String phone, String address, ArrayList<Usuario> empleados, ArrayList<Transaccion> transacciones, Date creacion, Date ultimaEdicion) {
+    public Empresa(String idEmpresa, String name, TipoDocumento tipoDocumentoE, String phone, String address, Usuario empleado, Date creacion) {
         this.idEmpresa = idEmpresa;
         this.name = name;
         this.tipoDocumentoE = tipoDocumentoE;
         this.phone = phone;
         this.address = address;
+        ArrayList<Usuario>empleados=new ArrayList<>();
+        empleados.add(empleado);
         this.empleados = empleados;
-        this.transacciones = transacciones;
+        this.transacciones = new ArrayList<Transaccion>();
         this.creacion = creacion;
-        this.ultimaEdicion = ultimaEdicion;
+        this.ultimaEdicion = creacion;
         this.estadoEmpresa=true;
     }
 
-    public Long getIdEmpresa() {
+    public Empresa(String name) {
+        this.name = name;
+
+    }
+
+    public String getIdEmpresa() {
         return idEmpresa;
     }
 
-    public void setIdEmpresa(Long idEmpresa) {
+    public void setIdEmpresa(String idEmpresa) {
         this.idEmpresa = idEmpresa;
     }
 
