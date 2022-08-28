@@ -79,16 +79,4 @@ public class Transaccion {
         this.estadoTransaccion = estadoTransaccion;
     }
 
-    @Override
-    public String toString() {
-        return "Transaccion{" +
-                "idTransaccion='" + idTransaccion + '\'' +
-                ", concepto='" + concepto + '\'' +
-                ", amount=" + amount +
-                ", usuario=" + usuario +
-                ", creacion=" + creacion +
-                ", ultimaEdicion=" + ultimaEdicion +
-                ", estadoTransaccion=" + estadoTransaccion +
-                '}';
-    }
 }
