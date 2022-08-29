@@ -9,7 +9,6 @@ public class Transaccion {
     private Usuario usuario;
     private Date creacion;
     private Date ultimaEdicion;
-    private boolean ingreso;
     private boolean estadoTransaccion;
 
     public Transaccion(){
@@ -63,13 +62,7 @@ public class Transaccion {
         this.ultimaEdicion = ultimaEdicion;
     }
 
-    public boolean isIngreso() {
-        return ingreso;
-    }
 
-    public void setIngreso(boolean ingreso) {
-        this.ingreso = ingreso;
-    }
 
     public boolean isEstadoTransaccion() {
         return estadoTransaccion;
@@ -79,17 +72,4 @@ public class Transaccion {
         this.estadoTransaccion = estadoTransaccion;
     }
 
-    @Override
-    public String toString() {
-        return "Transaccion{" +
-                "idTransaccion=" + idTransaccion +
-                ", concepto='" + concepto + '\'' +
-                ", amount=" + amount +
-                ", usuario=" + usuario +
-                ", creacion=" + creacion +
-                ", ultimaEdicion=" + ultimaEdicion +
-                ", ingreso=" + ingreso +
-                ", estadoTransaccion=" + estadoTransaccion +
-                '}';
-    }
 }
