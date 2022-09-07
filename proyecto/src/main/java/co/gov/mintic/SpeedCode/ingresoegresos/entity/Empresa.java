@@ -1,18 +1,27 @@
 package co.gov.mintic.SpeedCode.ingresoegresos.entity;
-
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
-
+@Entity
+@Table(name="empresas")
 public class Empresa {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_empresa")
     private long idEmpresa;
+    @Column(name="name")
     private String name;
-    private TipoDocumento tipoDocumentoE;
+    @Column(name="documento")
+    private String documento;
+    @Column(name="celular")
     private String phone;
+    @Column(name="direcion")
     private String address;
-    private ArrayList<Usuario> empleados;
-    private ArrayList<Transaccion> transacciones;
+    @Column(name="creacion")
     private Date creacion;
+    @Column(name="edicion")
     private Date ultimaEdicion;
+    @Column(name="estado")
     private boolean estadoEmpresa;
     public Empresa(){
 
@@ -34,12 +43,12 @@ public class Empresa {
         this.name = name;
     }
 
-    public TipoDocumento getTipoDocumentoE() {
-        return tipoDocumentoE;
+    public String getDocumento() {
+        return documento;
     }
 
-    public void setTipoDocumentoE(TipoDocumento tipoDocumentoE) {
-        this.tipoDocumentoE = tipoDocumentoE;
+    public void setDocumento(String documento) {
+        this.documento = documento;
     }
 
     public String getPhone() {
@@ -58,21 +67,6 @@ public class Empresa {
         this.address = address;
     }
 
-    public ArrayList<Usuario> getEmpleados() {
-        return empleados;
-    }
-
-    public void setEmpleados(ArrayList<Usuario> empleados) {
-        this.empleados = empleados;
-    }
-
-    public ArrayList<Transaccion> getTransacciones() {
-        return transacciones;
-    }
-
-    public void setTransacciones(ArrayList<Transaccion> transacciones) {
-        this.transacciones = transacciones;
-    }
 
     public Date getCreacion() {
         return creacion;
@@ -103,11 +97,8 @@ public class Empresa {
         return "Empresa{" +
                 "idEmpresa=" + idEmpresa +
                 ", name='" + name + '\'' +
-                ", tipoDocumentoE=" + tipoDocumentoE +
                 ", phone='" + phone + '\'' +
                 ", address='" + address + '\'' +
-                ", empleados=" + empleados +
-                ", transacciones=" + transacciones +
                 ", creacion=" + creacion +
                 ", ultimaEdicion=" + ultimaEdicion +
                 ", estadoEmpresa=" + estadoEmpresa +

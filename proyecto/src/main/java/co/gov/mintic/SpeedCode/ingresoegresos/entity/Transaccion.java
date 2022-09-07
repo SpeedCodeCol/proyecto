@@ -1,14 +1,26 @@
 package co.gov.mintic.SpeedCode.ingresoegresos.entity;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(name = "transacciones")
 public class Transaccion {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_transaccion")
     private long idTransaccion;
+    @Column(name="concepto")
     private String concepto;
+    @Column(name="amount")
     private float amount;
+    @ManyToOne
+    @JoinColumn(name="id_usuario")
     private Usuario usuario;
+    @Column(name="creacion")
     private Date creacion;
+    @Column(name="edicion")
     private Date ultimaEdicion;
+    @Column(name="estado")
     private boolean estadoTransaccion;
 
     public Transaccion(){

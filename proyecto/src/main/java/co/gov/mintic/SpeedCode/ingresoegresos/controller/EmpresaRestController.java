@@ -1,15 +1,11 @@
 package co.gov.mintic.SpeedCode.ingresoegresos.controller;
 
 import co.gov.mintic.SpeedCode.ingresoegresos.entity.Empresa;
-import co.gov.mintic.SpeedCode.ingresoegresos.entity.TipoDocumento;
-import co.gov.mintic.SpeedCode.ingresoegresos.entity.Transaccion;
-import co.gov.mintic.SpeedCode.ingresoegresos.entity.Usuario;
 import co.gov.mintic.SpeedCode.ingresoegresos.service.IEmpresa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 @RestController
 @RequestMapping("/api/empresa")

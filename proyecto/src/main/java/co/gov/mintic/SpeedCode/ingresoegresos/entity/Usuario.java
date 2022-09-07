@@ -1,18 +1,34 @@
 package co.gov.mintic.SpeedCode.ingresoegresos.entity;
 
+import javax.persistence.*;
 import java.util.Date;
-
+@Entity
+@Table(name="usuarios")
 public class Usuario {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id_usuario")
     private long idUsuario;
+    @Column(name="nombre")
     private String nombre;
+    @Column(name="correo")
     private String correo;
+    @Column(name="clave")
     private String clave;
-    private TipoDocumento tipoDocumento;
+    @Column(name="documento")
+    private String documento;
+    @Column(name="role")
     private Rol role;
+    @Column(name="celular")
     private String phone;
+    @Column(name="creacion")
     private Date fechaCreacion;
+    @Column(name="edicion")
     private Date fechaEdicion;
+    @Column(name="estado")
     private boolean estado;
+    @ManyToOne
+    @JoinColumn(name="id_empresa")
     private Empresa empresa;
     public Usuario(){
     }
@@ -49,13 +65,6 @@ public class Usuario {
         this.clave = clave;
     }
 
-    public TipoDocumento getTipoDocumento() {
-        return tipoDocumento;
-    }
-
-    public void setTipoDocumento(TipoDocumento tipoDocumento) {
-        this.tipoDocumento = tipoDocumento;
-    }
 
     public Rol getRole() {
         return role;
@@ -105,6 +114,14 @@ public class Usuario {
         this.empresa = empresa;
     }
 
+    public String getDocumento() {
+        return documento;
+    }
+
+    public void setDocumento(String documento) {
+        this.documento = documento;
+    }
+
     @Override
     public String toString() {
         return "Usuario{" +
@@ -112,7 +129,6 @@ public class Usuario {
                 ", nombre='" + nombre + '\'' +
                 ", correo='" + correo + '\'' +
                 ", clave='" + clave + '\'' +
-                ", tipoDocumento=" + tipoDocumento +
                 ", role=" + role +
                 ", phone='" + phone + '\'' +
                 ", fechaCreacion=" + fechaCreacion +
