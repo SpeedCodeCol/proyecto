@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class UsuarioRestController {
     @Autowired
     private IUsuarioService iusu;
+
     @GetMapping("/{id}")//este id q pasa la pagina la guarda como argumento de la funcion que sigue
     public Usuario findByIdUsuario(@PathVariable long id) {
         return iusu.findByIdUsuario(id);

@@ -16,22 +16,18 @@ public class EmpresaRestController {
     public Empresa findByIdEmpresa(@PathVariable long id){//este nombre id debe ser igual al de arriba si no digitara error
         return iempresa.findByIdEmpresa(id);
     }
-    //encontrar
     @GetMapping("/")
     public ArrayList<Empresa> findAllEmpresa(){
         return iempresa.findAllEmpresa();
     }
-    //crear un nuevo dato
     @PostMapping("/")
     public Empresa createEmpresa(@RequestBody Empresa nuevo){
         return iempresa.createEmpresa(nuevo);
     }
-    //ACTUALIZAR
     @PutMapping("/{id}")
     public Empresa updateEmpresa (@PathVariable long id,@RequestBody Empresa nuevo){
         return iempresa.updateEmpresa(id,nuevo);
     }
-    //Delete
     @DeleteMapping("/{id}")
     public void deleteEmpresa(@PathVariable long id){
         iempresa.deleteEmpresa(id);

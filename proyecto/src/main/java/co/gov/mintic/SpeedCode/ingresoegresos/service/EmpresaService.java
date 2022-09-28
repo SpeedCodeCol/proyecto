@@ -1,14 +1,11 @@
 package co.gov.mintic.SpeedCode.ingresoegresos.service;
 
 import co.gov.mintic.SpeedCode.ingresoegresos.entity.Empresa;
-import co.gov.mintic.SpeedCode.ingresoegresos.entity.Transaccion;
-import co.gov.mintic.SpeedCode.ingresoegresos.entity.Usuario;
 import co.gov.mintic.SpeedCode.ingresoegresos.repository.IEmpresaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Optional;
 
 @Service

@@ -12,4 +12,5 @@ public interface ITransaccion {
     public Transaccion createTransaccion(Transaccion nuevo);
     public Transaccion updateTransaccion (long id,Transaccion nuevo);
     public void deleteTransaccion(long id);
+    public ArrayList<Transaccion> obtenerTransaccionIdUsuario(long id);
 }
